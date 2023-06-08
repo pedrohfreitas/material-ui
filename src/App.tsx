@@ -11,6 +11,6 @@ export const App = () => {
       </BrowserRouter>
     </AppThemeProvider>
   );
-}
+};
 
 export default App;
