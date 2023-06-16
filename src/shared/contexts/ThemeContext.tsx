@@ -3,7 +3,7 @@ import { createContext, useContext, useCallback, useMemo, useState } from "react
 import {  LightTheme, DarkTheme } from "../themes";
 
 interface IThemeContextData {
-    themeName: 'light' | 'dark';
+    themeName: "light" | "dark";
     toggleTheme: () => void;
 }
 
@@ -15,24 +15,24 @@ const ThemeContext = createContext({} as IThemeContextData);
 
 export const useAppThemeContext = () => {
     return useContext(ThemeContext);
-}
+};
 
 export const AppThemeProvider: React.FC<IAppThemeProviderProps> = ({ children }) => {
 
-    const [themeName, setThemeName] = useState<'light' | 'dark'>('light');
+    const [themeName, setThemeName] = useState<"light" | "dark">("light");
 
     const toggleTheme = useCallback(() => {
-        setThemeName(oldThemeName => oldThemeName === 'light' ? 'dark' : 'light');
-    }, [])
+        setThemeName(oldThemeName => oldThemeName === "light" ? "dark" : "light");
+    }, []);
 
     const theme = useMemo(() => {
-        if(themeName === 'light') {
+        if(themeName === "light") {
             return LightTheme;
         }else{
             return DarkTheme;
         }
 
-    }, [themeName])
+    }, [themeName]);
 
     return (
         <ThemeContext.Provider value={{themeName, toggleTheme}}>
@@ -43,4 +43,4 @@ export const AppThemeProvider: React.FC<IAppThemeProviderProps> = ({ children })
             </ThemeProvider>
         </ThemeContext.Provider>
     );
-}
+};

@@ -1,20 +1,23 @@
 import { createTheme } from "@mui/material";
-import { green, grey, purple,  } from "@mui/material/colors";
+import { green, purple,  } from "@mui/material/colors";
 
 export const LightTheme = createTheme({
     palette: {
         primary: {
-            main: purple[600],
-            dark: purple[700],
+            main: purple[500],
+            dark: purple[600],
             light: purple[500],
-            contrastText: '#fff'
+            contrastText: "#ffffff"
         },
         secondary: {
-            main: green[500],
+            main: green[300],
+            dark: green[600],
+            light: green[500],
+            contrastText: "#ffffff",
         },
         background: {
-            default: grey[400],
-            paper: '#fffff'
+            paper: "#ffffff",
+            default: "#f7f6f3",
         }
     }
 
